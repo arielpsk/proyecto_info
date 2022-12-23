@@ -1,0 +1,195 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+<title>{% block title %} Inicio {% endblock title %}</title>
+
+{% block contenido %}
+
+  <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                    <h1>Fundación Entre Nosotras</h1>
+                    <FONT COLOR="white"><h5>"Somos un proyecto interdisciplinario de impacto social que fue fundado en el año 2016. Tiene como objetivo apoyar a las mujeres que estan siendo vulneradas para poder acompañarlas, otorgandoles herramientas para que puedan elevar su nivel de vida."</h5></FONT><br>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <center><a href="#about" class="btn-get-started scrollto">Conocé mas acerca de nosotras</a></center>
+                        <a href="https://www.instagram.com/p/ClofdJqpb7Q/" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Conocenos a traves de nuestro video institucional</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                    {% comment %} <img src="assets/img/default.png" class="img-fluid animated" alt=""> {% endcomment %}
+                    <div class="pic"><img src="static/assets/img/default.png" class="img-fluid" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero -->
+
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Acerca de Nosotras</h2>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-6">
+          <p>
+            Consideramos que es importante acompañar en el crecimiento de todas aquellas personas que se han acercado a la institución
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i> Nuestra Visión: Concretar la armonía y equilibrio de la mujer como persona, en los diferentes roles que asume</li>
+            <li><i class="ri-check-double-line"></i> ¡Somos mujeres ayudando mujeres!</li>
+            <li><i class="ri-check-double-line"></i> Somos un espacio donde la salud y el desarrollo de la mujer están puestos en un lugar de prioridad </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <p>
+            "Una mujer fuerte toma decisiones desde un lugar de autoridad, de poder, y no desde la debilidad."
+          </p>
+          <a href="#team" class="btn-learn-more">Leer mas</a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->   
+
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+  
+          <div class="row">
+            <div class="col-lg-9 text-center text-lg-start">
+              <h3>Queres ver nuestras noticias</h3>
+              <p> Enterate que es lo que hacemos</p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="#services">Ver noticias</a>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Cta Section -->
+
+<!-- ======= Services Section ======= -->
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+        <h2>Noticias</h2>
+        <p>Nuestras actividades</p>
+    </div>
+
+    <div class="row">
+
+        {% for n in object_list %}
+
+            <div class="icon-box">
+                    <h4><a href="">{{n.titulo}}</a></h4>
+                    <h6><a href="">{{n.subtitulo}}</a></h6>
+                    {% if n.imagen %} <img src="{{n.imagen.url}}" class = "img-fluid animated" alt = "">
+                    {% else %} <img src="static/assets/img/default.png">
+                    {% endif %}
+                    <div class="icon"><i class=""></i></div>
+                    <h6><a href="">{{n.publicado}}</a></h6>
+                    <h6><a href="">{{n.Categoria}}</a></h6>
+                    <p>{{n.texto}}</p>
+                      <a class='cta-btn align-middle' href="{% url "detail" n.pk %}"><br>Deja aquí tu comentario</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    </div>
+</section><!-- End Services Section -->
+
+
+{% comment %} <!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Team</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Walter White</h4>
+              <span>Chief Executive Officer</span>
+              <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Sarah Jhonson</h4>
+              <span>Product Manager</span>
+              <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+            <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>William Anderson</h4>
+              <span>CTO</span>
+              <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+            <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+              <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Team Section --> {% endcomment %}
+
+{%endblock%}

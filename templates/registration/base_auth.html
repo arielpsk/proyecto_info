@@ -1,0 +1,318 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es-ar">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %}  {% endblock title %}</title>
+
+  <!-- Favicons -->
+  <link href="{% static "assets/img/entrenosotras.png" %}" alt="" rel="icon">
+  <link href="{% static "assets/img/entrenosotras.png" %}" alt="" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static "assets/vendor/aos/aos.css" %}" alt="" rel="stylesheet">
+  <link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" alt="" rel="stylesheet">
+  <link href="{% static "assets/vendor/bootstrap-icons/bootstrap-icons.css" %}" alt="" rel="stylesheet">
+  <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css" %}" alt="" rel="stylesheet">
+  <link href="{% static "assets/vendor/glightbox/css/glightbox.min.css" %}" alt="" rel="stylesheet">
+  <link href="{% static "assets/vendor/remixicon/remixicon.css" %}" alt="" rel="stylesheet">
+  <link href="{% static "assets/vendor/swiper/swiper-bundle.min.css" %}" alt="" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "assets/css/style.css" %}" alt="" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="index.html">Entre Nosotras</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+                <li><a class="nav-link scrollto" href="#about">Nosotras</a></li>
+                <li><a class="nav-link scrollto" href="#services">Nuestras noticias</a></li>
+                <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
+                <li class="dropdown"><a href="#"><span>Galeria</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#services">Noticias</a></li>
+                        <li><a href="#">Fotos</a></li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+                <li><a class="getstarted scrollto" href="#about">Iniciar sesión</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+    </header><!-- End Header -->
+
+
+{% block contenido  %}
+
+
+
+{% endblock  %}
+
+
+    {% comment %} <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                    <h1>Fundación Entre Nosotras</h1>
+                    <FONT COLOR="white"><h5>"Somos un proyecto interdisciplinario de impacto social que fue fundado en el año 2016. Tiene como objetivo apoyar a las mujeres que estan siendo vulneradas para poder acompañarlas, otorgandoles herramientas para que puedan elevar su nivel de vida."</h5></FONT><br>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <center><a href="#about" class="btn-get-started scrollto">Conocé mas acerca de nosotras</a></center>
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Reproducir video institucional</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End Hero --> {% endcomment %}
+
+{% comment %} <!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Acerca de Nosotras</h2>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-6">
+          <p>
+            Consideramos que es importante acompañar en el crecimiento de todas aquellas personas que se han acercado a la institución
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i> Nuestra Visión: Concretar la armonía y equilibrio de la mujer como persona, en los diferentes roles que asume</li>
+            <li><i class="ri-check-double-line"></i> ¡Somos mujeres ayudando mujeres!</li>
+            <li><i class="ri-check-double-line"></i> Somos un espacio donde la salud y el desarrollo de la mujer están puestos en un lugar de prioridad </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <p>
+            "Una mujer fuerte toma decisiones desde un lugar de autoridad, de poder, y no desde la debilidad."
+          </p>
+          <a href="#" class="btn-learn-more">Leer mas</a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->    {% endcomment %}
+
+
+    {% comment %} <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+  
+          <div class="row">
+            <div class="col-lg-9 text-center text-lg-start">
+              <h3>Queres ver nuestras noticias</h3>
+              <p> Enterate que es lo que hacemos</p>
+            </div>
+            <div class="col-lg-3 cta-btn-container text-center">
+              <a class="cta-btn align-middle" href="noticias">Ver noticias</a>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Cta Section --> {% endcomment %}
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Equipo Somos Nosotras</h2>
+        <p>Conocé un poco mas nuestro equipo</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pic"><img src="{% static "assets/img/team/profesora.png" %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Sandra Gomez</h4>
+              <span>Fundadora Presidenta</span>
+              <p>Al servicio de la fundación</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pic"><img src="{% static "assets/img/team/profesora.png" %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Lidia Reich</h4>
+              <span>Vice-Presidenta</span>
+              <p>Al servicio de la fundación</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+            <div class="pic"><img src="{% static "assets/img/team/profesora.png" %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Patricia Boniardi</h4>
+              <span>Profesora</span>
+              <p>Al servicio de la fundación</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-4">
+          <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+            <div class="pic"><img src="{% static "assets/img/team/profesora.png" %}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>Dra. Noelia Fernández</h4>
+              <span>Colaboradora</span>
+              <p>Al servicio de la fundación</p>
+              <div class="social">
+                <a href=""><i class="ri-twitter-fill"></i></a>
+                <a href=""><i class="ri-facebook-fill"></i></a>
+                <a href=""><i class="ri-instagram-fill"></i></a>
+                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Team Section -->
+
+
+
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Entre Nosotras</h3>
+                    <p>
+                        Villa Angela - Chaco - Argentina <br>
+                        <strong>Telefono:</strong> +54 9 373546-4287<br>
+                        <strong>Email:</strong> entrenosotras.org@gmail.com<br>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Links De Ayuda</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#hero">Inicio</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#about">Nosotras</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#services">Nuestras noticias</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#team">Equipo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Nuestros Servicios</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a>Psicología</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a>Psicopedagogía</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a>Nutrición</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a>Asesoramiento Legal</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a>Talleres varios</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Nuestras redes sociales</h4>
+                    <p>Aquí podes visitar nuestras redes sociales</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/FundacionEntreNosotras" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="https://www.instagram.com/fundacion.entrenosotras/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Grupo 08-Informatorio</span></strong>. Todos los derechos reservados
+        </div>
+        <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Diseñado por <a href="https://bootstrapmade.com/">Grupo 08</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static "assets/vendor/aos/aos.js" %}" ></script>
+    <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+    <script src="{% static "assets/vendor/glightbox/js/glightbox.min.js"%}"></script>
+    <script src="{% static "assets/vendor/isotope-layout/isotope.pkgd.min.js"%}"></script>
+    <script src="{% static "assets/vendor/swiper/swiper-bundle.min.js"%}"></script>
+    <script src="{% static "assets/vendor/waypoints/noframework.waypoints.js"%}"></script>
+    <script src="{% static "assets/vendor/php-email-form/validate.js"%}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static "assets/js/main.js" %}"></script>
+
+</body>
+
+
+</html>

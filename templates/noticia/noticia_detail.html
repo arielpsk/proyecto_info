@@ -1,0 +1,104 @@
+{% comment %} {% extends base.html %} {% endcomment %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <!-- ##### Single Blog Area Start ##### -->
+    <div class="single-blog-wrapper section-padding-0-100">
+
+        <!-- Single Blog Area  -->
+        <div class="single-blog-area blog-style-2 mb-50">
+            <div class="single-blog-thumbnail">
+                <img src="{{ object.imagen.url }}" alt="imagen_{{ object.titulo }}">
+                <div class="post-tag-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="post-date">
+                                    <a href="#">{{ object.publicado}}</span></a>
+                                    {% comment %} <a href="#">{{ object.fecha|date:'d' }} <span>{{ object.fecha|date:'b' }}</span><span>{{ object.fecha|date:'Y' }}</span></a> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <!-- ##### Post Content Area ##### -->
+                <div class="col-12 col-lg-9">
+                    <!-- Single Blog Area  -->
+                    <div class="single-blog-area blog-style-2 mb-50">
+                        <!-- Blog Content -->
+                        <div class="single-blog-content">
+                            <div class="line"></div>
+                            <a href="#" class="post-tag">{{ object.categoria }}</a>
+                            <h4><a href="{% url 'detail' object.pk %}" class="post-headline">{{ object.titulo }}</a></h4>
+                            <h6>{{ object.subtitulo }}</h6>
+                            <div class="post-meta mb-50">
+                                <p>Autor: <a href="#usuario">{{ object.usuario.first_name }} {{ object.usuario.last_name }}</a></p>
+                                <br>
+                                <p>Publicado hace: {{ object.publicado }}</p>
+                            </div>
+                            <p style="text-align: justify;">{{ object.contenido }}</p>
+                        </div>
+                    </div>
+
+                    <!-- About Author -->
+                    <div class="blog-post-author mt-100 d-flex">
+                        <div class="author-info">
+                            <div class="line"></div>
+                            <span class="author-role">Autor</span>
+                            <h4><a href="#" class="author-name">{{ object.usuario.first_name }} {{ object.usuario.last_name }}</a></h4>
+                        </div>
+                    </div>
+
+                    <!-- Comment Area Start -->
+                    {% if user.is_authenticated %}
+                        <style>
+                            #btnComentar{
+                                background-color: #007bff;
+                            }
+                        </style>
+                        <div class="post-a-comment-area mt-70">
+                            <h5>Deja un comentario</h5>
+                            <!-- Reply Form -->
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form | crispy }}
+                                <div class="col-12">
+                                    <button id="btnComentar" type="submit" class="btn btn-primary">Comentar</button>
+                                </div>
+                            </form>
+                        </div>
+                    {% endif %}
+                    <div class="comment_area clearfix mt-70">
+                        <h5 class="title">Comentarios</h5>
+                        <ol>
+                            {% for comentario in object.comentarios %}
+                                <!-- Single Comment Area -->
+                                <li class="single_comment_area">
+                                    <!-- Comment Content -->
+                                    <div class="comment-content d-flex">
+                                        <!-- Comment Meta -->
+                                        <div class="comment-meta">
+                                            <a href="#" class="post-date">{{ comentario.fecha_hora }}</a>
+                                            {% comment %} <p><a href="#user_profile" class="post-author">{{ comentario.usuario.username }}</a></p> {% endcomment %}
+                                            <p><a href="#user_profile" class="post-author">{{ comentario.usuario.first_name }} {{ comentario.usuario.last_name }}</a></p>
+                                            <p>{{ comentario.contenido }}</p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Single Blog Area End ##### -->
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% comment %} {% extends 'registration/base_auth.html' %} {% endcomment %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12 col-md-4 offset-md-4">
+        <br><br>
+        <div class="card">
+            <div class="card-body">
+                <h2>Registro de usuario</h2>
+                <hr>
+                <form method="post">
+                    <br>
+                    {% csrf_token %}
+
+                    {{ form | crispy }}
+                    <br>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-pimary" value="Submit">Registrarse</button>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+        <br><br><br><br><br><br>
+    </div>
+</div>
+
+{% endblock content %}
